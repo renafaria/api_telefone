@@ -12,12 +12,12 @@ app.logger.setLevel(logging.INFO)
 
 @app.route('/', methods=['GET'])
 def get():
-    return ApiService.get()
+    return ApiService().get()
 
 
 @app.route('/telefone/<string:empresa>', methods=['GET'])
 def telefone(empresa):
-    return ApiService.get_telefone(empresa)
+    return ApiService().get_telefone(empresa)
 
 
 if __name__ == '__main__':
