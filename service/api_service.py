@@ -18,7 +18,7 @@ class ApiService:
     def get_telefone(self, empresa):
         page_source = requests.get('https://www.google.com/search?q=brasil+{empresa}+telefone+telefone'
                                    '&oq=brasil+{empresa}+telefone+telefone'
-                                   .format(empresa=empresa.replace(' ', '+'))).text
+                                   .format(empresa=empresa)).text
         soup = BeautifulSoup(page_source, 'html.parser')
         class_telefone = soup.find_all(True, class_='mrH1y')
         try:
